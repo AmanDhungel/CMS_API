@@ -45,6 +45,29 @@ const productSchema = new mongoose.Schema({
       message: "isProductNew should be a boolean",
     },
   },
+  hasCategory: {
+    type: Boolean,
+    default: true,
+    validate: {
+      validator: (value) => {
+        return typeof value === "boolean";
+      },
+      message: "hasCategory should be a boolean",
+    },
+  },
+  Category: {
+    type: [{
+      name: String,
+      price: Number
+    }],
+    validate: {
+      validator: (value) => {
+        return !this.hasCategory || value.length > 0;
+      },
+      message: "Has Category is False",
+    },
+  },
+
   sold: {
     type: Number,
     default: 0,

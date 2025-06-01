@@ -1,4 +1,4 @@
-import Product from "../models/product.models";
+import Product from "../models/product.models.js";
 
 const getProduct = async (req, res) => {
   try {
@@ -54,3 +54,5 @@ const deleteProduct = async (req, res) => {
       .json({ error: error });
   }
 };
+
+export { getProduct, createProduct, getProductById, updateProduct, deleteProduct }; 

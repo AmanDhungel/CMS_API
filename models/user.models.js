@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     trim: true,
     validate: {
-      validator: (value: string) => {
+      validator: (value) => {
         return value.length > 2;
       },
       message: "Name should be greater than 2 characters",
@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
     validate: {
-      validator: (value: string) => {
+      validator: (value) => {
         return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
       },
     },
@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: (value: string) => {
+      validator: (value) => {
         return value.length > 6;
       },
       message: "Password should be greater than 6 characters",

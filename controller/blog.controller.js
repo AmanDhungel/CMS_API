@@ -1,7 +1,5 @@
-import express, { Request, Response } from "express";
-import { Blog } from "../models/blog.models";
+import { Blog } from "../models/blog.models.js";
 
-const blogRouter = express.Router();
 
 const createBlog = async (req, res) => {
   try {
@@ -44,4 +42,4 @@ const deleteBlog = async (req, res) => {
   }
 };
 
-export { blogRouter };
+export { createBlog, getBlog, getBlogById, deleteBlog };

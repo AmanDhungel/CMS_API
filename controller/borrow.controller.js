@@ -1,4 +1,4 @@
-import Borrow from "../models/borrow.models";
+import Borrow from "../models/borrow.models.js";
 
 const createBorrow = async (req, res) => {
     try {
@@ -54,3 +54,5 @@ const deleteBorrow = async (req, res) => {
             .json({ error: error instanceof Error ? error.message : error });
     }
 }
+
+export { createBorrow, updateBorrow, getBorrow, getBorrowById, deleteBorrow };

@@ -54,3 +54,5 @@ const deleteProduct = async (req, res) => {
       .json({ error: error });
   }
 };
+
+export { getProduct, createProduct, getProductById, updateProduct, deleteProduct }; 

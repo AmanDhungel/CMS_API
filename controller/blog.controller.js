@@ -1,5 +1,4 @@
-import express, { Request, Response } from "express";
-import { Blog } from "../models/blog.models";
+import { Blog } from "../models/blog.models.js";
 
 
 const createBlog = async (req, res) => {

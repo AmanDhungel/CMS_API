@@ -29,7 +29,7 @@ const productSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
     validate: {
-      validator: (value: boolean) => {
+      validator: (value) => {
         return typeof value === "boolean";
       },
       message: "inStock should be a boolean",
@@ -39,7 +39,7 @@ const productSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
     validate: {
-      validator: (value: boolean) => {
+      validator: (value) => {
         return typeof value === "boolean";
       },
       message: "isProductNew should be a boolean",

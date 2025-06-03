@@ -3,7 +3,7 @@ import { Blog } from "../models/blog.models.js";
 
 const createBlog = async (req, res) => {
   try {
-    const val = await Blog.create(req.body);
+    const val = await Blog.create({ ...req.body }, { runValidators: true });
     res.send(val).status(201);
   } catch (error) {
     res.send(error).status(400);

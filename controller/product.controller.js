@@ -11,10 +11,16 @@ const getProduct = async (req, res) => {
 
 const createProduct = async (req, res) => {
   try {
-    const val = await Product.create(req.body, { runValidators: true });
-    res.send(val).status(201).json({ message: "success" });
+    const val = await Product.create([req.body], { runValidators: true });
+    res.status(201).json({
+      message: "success",
+      product: val
+    });
   } catch (error) {
-    res.send(error).status(400);
+    res.status(400).json({
+      message: "Error creating product",
+      error: error.message
+    });
   }
 };
 
@@ -31,11 +37,12 @@ const updateProduct = async (req, res) => {
   try {
     const val = await Product.findByIdAndUpdate(req.params.id, req.body, {
       runValidators: true,
+      new: true,
     });
     if (!val) {
       return res.status(404).json({ message: "Product not found" });
     }
-    res.send(val).status(200).json({ message: "success" });
+    res.status(200).json({ message: "success", product: val });
   } catch (error) {
     res.send(error).status(400);
   }

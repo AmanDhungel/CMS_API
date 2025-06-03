@@ -2,7 +2,7 @@ import Borrow from "../models/borrow.models.js";
 
 const createBorrow = async (req, res) => {
     try {
-        const val = await Borrow.create(req.body, { runValidators: true });
+        const val = await Borrow.create([req.body], { runValidators: true });
         res.send(val).status(201);
     } catch (error) {
         res.send(error).status(400);

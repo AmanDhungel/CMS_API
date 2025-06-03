@@ -11,7 +11,7 @@ const getCustomer = async (req, res) => {
 
 const createCustomer = async (req, res) => {
     try {
-        const val = await Customer.create(req.body, { runValidators: true });
+        const val = await Customer.create([req.body], { runValidators: true });
         res.send(val).status(201);
     } catch (error) {
         res.send(error).status(400);
@@ -29,7 +29,7 @@ const getCustomerById = async (req, res) => {
 
 const updateCustomer = async (req, res) => {
     try {
-        const val = await Customer.findByIdAndUpdate(req.params.id, req.body, {
+        const val = await Customer.findByIdAndUpdate(req.params.id, [req.body], {
             runValidators: true
         })
         if (!val) {
@@ -56,4 +56,4 @@ const deleteCustomer = async (req, res) => {
 }
 
 
-export { getCustomer, createCustomer, getCustomerById }
+export { getCustomer, createCustomer, getCustomerById, deleteCustomer }

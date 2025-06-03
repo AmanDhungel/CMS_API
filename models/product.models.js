@@ -1,77 +1,49 @@
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  quatity: {
-    type: Number,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-  image: {
-    type: [String],
-    required: true,
-  },
-  category: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
+  name: { type: String, required: true },
+  quantity: { type: Number, required: true },
+  price: { type: Number, required: true },
+  image: { type: [String], required: true },
+  description: { type: String, required: true },
   inStock: {
     type: Boolean,
     default: true,
-    validate: {
-      validator: (value) => {
-        return typeof value === "boolean";
-      },
-      message: "inStock should be a boolean",
-    },
+    // validate: { // <--- COMMENT OUT THIS BLOCK
+    //   validator: (value) => typeof value === "boolean",
+    //   message: "inStock should be a boolean",
+    // },
   },
   isProductNew: {
     type: Boolean,
     default: true,
-    validate: {
-      validator: (value) => {
-        return typeof value === "boolean";
-      },
-      message: "isProductNew should be a boolean",
-    },
+    // validate: { // <--- COMMENT OUT THIS BLOCK
+    //   validator: (value) => typeof value === "boolean",
+    //   message: "isProductNew should be a boolean",
+    // },
   },
   hasCategory: {
     type: Boolean,
     default: true,
-    validate: {
-      validator: (value) => {
-        return typeof value === "boolean";
+    // validate: { // <--- COMMENT OUT THIS BLOCK
+    //   validator: (value) => typeof value === "boolean",
+    //   message: "hasCategory should be a boolean",
+    // },
+  },
+  category: {
+    type: [
+      {
+        name: { type: String, required: true },
+        price: { type: Number, required: true },
       },
-      message: "hasCategory should be a boolean",
-    },
+    ],
+    required: true,
+    // validate: { // <--- COMMENT OUT THIS BLOCK
+    //   validator: (value) => value.length > 0,
+    //   message: "Category should not be empty",
+    // },
   },
-  Category: {
-    type: [{
-      name: String,
-      price: Number
-    }],
-    validate: {
-      validator: (value) => {
-        return !this.hasCategory || value.length > 0;
-      },
-      message: "Has Category is False",
-    },
-  },
-
-  sold: {
-    type: Number,
-    default: 0,
-  },
+  sold: { type: Number, default: 0 },
 });
 
 const Product = mongoose.model("Product", productSchema);

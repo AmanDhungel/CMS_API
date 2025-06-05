@@ -28,6 +28,18 @@ const getBlogById = async (req, res) => {
   }
 };
 
+const UpdateBlog = async (req, res) => {
+  try {
+    const val = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+      runValidators: true,
+    });
+    res.send(val).status(200);
+  } catch (error) {
+    res.send(error).status(400);
+  }
+};
+
+
 const deleteBlog = async (req, res) => {
   try {
     const deletedBlog = await Blog.findByIdAndDelete(req.params.id);
@@ -42,4 +54,4 @@ const deleteBlog = async (req, res) => {
   }
 };
 
-export { createBlog, getBlog, getBlogById, deleteBlog };
+export { createBlog, getBlog, getBlogById, deleteBlog, UpdateBlog };

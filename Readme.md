@@ -103,7 +103,7 @@ server starts at http://localhost:3000
 
 ## Data Model
 
-- title: String
+- title: String <br>
 - description: String
 - exercpt: String
 - tags: array of String

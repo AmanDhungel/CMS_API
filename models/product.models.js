@@ -9,26 +9,26 @@ const productSchema = new mongoose.Schema({
   inStock: {
     type: Boolean,
     default: true,
-    // validate: { // <--- COMMENT OUT THIS BLOCK
-    //   validator: (value) => typeof value === "boolean",
-    //   message: "inStock should be a boolean",
-    // },
+    validate: {
+      validator: (value) => typeof value === "boolean",
+      message: "inStock should be a boolean",
+    },
   },
   isProductNew: {
     type: Boolean,
     default: true,
-    // validate: { // <--- COMMENT OUT THIS BLOCK
-    //   validator: (value) => typeof value === "boolean",
-    //   message: "isProductNew should be a boolean",
-    // },
+    validate: {
+      validator: (value) => typeof value === "boolean",
+      message: "isProductNew should be a boolean",
+    },
   },
   hasCategory: {
     type: Boolean,
     default: true,
-    // validate: { // <--- COMMENT OUT THIS BLOCK
-    //   validator: (value) => typeof value === "boolean",
-    //   message: "hasCategory should be a boolean",
-    // },
+    validate: {
+      validator: (value) => typeof value === "boolean",
+      message: "hasCategory should be a boolean",
+    },
   },
   category: {
     type: [
@@ -38,10 +38,10 @@ const productSchema = new mongoose.Schema({
       },
     ],
     required: true,
-    // validate: { // <--- COMMENT OUT THIS BLOCK
-    //   validator: (value) => value.length > 0,
-    //   message: "Category should not be empty",
-    // },
+    validate: {
+      validator: (value) => value.length > 0,
+      message: "Category should not be empty",
+    },
   },
   sold: { type: Number, default: 0 },
 });

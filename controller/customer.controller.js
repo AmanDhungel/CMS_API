@@ -56,4 +56,4 @@ const deleteCustomer = async (req, res) => {
 }
 
 
-export { getCustomer, createCustomer, getCustomerById, deleteCustomer }
+export { getCustomer, createCustomer, getCustomerById, deleteCustomer, updateCustomer }

@@ -3,13 +3,15 @@ import {
     createBlog,
     deleteBlog,
     getBlog,
-    getBlogById
+    getBlogById,
+    UpdateBlog
 } from "../controller/blog.controller.js";
 
 const blogRouter = express.Router();
 
 blogRouter.post("/", createBlog);
 blogRouter.get("/", getBlog);
+blogRouter.get("/:id", UpdateBlog);
 blogRouter.get("/:id", getBlogById);
 blogRouter.delete("/:id", deleteBlog);
 

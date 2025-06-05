@@ -62,50 +62,50 @@ server starts at http://localhost:3000
 
 ## Data model
 
-name: String
-email: String
-password: String
-isVerified: Boolean
-VerificationCode: String
+- name: String
+- email: String
+- password: String
+- isVerified: Boolean
+- VerificationCode: String
 
 ### Product
 
 ## Data Model
 
-name: string
-quantity: Number
-price: Number
-image: array of String
-description: String
-inStock: Boolean
-isProductNew: Boolean
-hasCategory: Boolean
-category: {type: [{name: String, price: Number}]}
-sold: Number
+- name: string
+- quantity: Number
+- price: Number
+- image: array of String
+- description: String
+- inStock: Boolean
+- isProductNew: Boolean
+- hasCategory: Boolean
+- category: {type: [{name: String, price: Number}]}
+- sold: Number
 
 ### Customer
 
 ## Data Model
 
-name: String
-phone: String
-address: String
+- name: String
+- phone: String
+- address: String
 
 ### Borrow
 
 ## Data Model
 
-customerId: customerId from Customer
-productId: ProductId from product
-borrow: today's Date
+- customerId: customerId from Customer
+- productId: ProductId from product
+- borrow: today's Date
 
 ### Blog
 
 ## Data Model
 
-title: String
-description: String
-exercpt: String
-tags: array of String
-Author: String
-image: array of String
+- title: String
+- description: String
+- exercpt: String
+- tags: array of String
+- Author: String
+- image: array of String

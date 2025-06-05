@@ -22,14 +22,6 @@ const productSchema = new mongoose.Schema({
       message: "isProductNew should be a boolean",
     },
   },
-  hasCategory: {
-    type: Boolean,
-    default: true,
-    validate: {
-      validator: (value) => typeof value === "boolean",
-      message: "hasCategory should be a boolean",
-    },
-  },
   category: {
     type: [
       {

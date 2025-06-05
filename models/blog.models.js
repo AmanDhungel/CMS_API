@@ -9,6 +9,18 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  exercpt: {
+    type: String,
+    required: true
+  },
+  tags: {
+    type: [String],
+    required: true,
+  },
+  Author: {
+    type: String,
+    required: true
+  },
   image: {
     type: [String],
     required: true,

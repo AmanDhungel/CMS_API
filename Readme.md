@@ -58,9 +58,9 @@ server starts at http://localhost:3000
   - [Update /borrow/:id](#update-borrowid)
   - [DELETE /borrow/:id](#delete-borrowid)
 
-### User
+## User
 
-## Data model
+### Data model
 
 - name: String
 - email: String
@@ -68,9 +68,9 @@ server starts at http://localhost:3000
 - isVerified: Boolean
 - VerificationCode: String
 
-### Product
+## Product
 
-## Data Model
+### Data Model
 
 - name: string
 - quantity: Number
@@ -83,25 +83,25 @@ server starts at http://localhost:3000
 - category: {type: [{name: String, price: Number}]}
 - sold: Number
 
-### Customer
+## Customer
 
-## Data Model
+### Data Model
 
 - name: String
 - phone: String
 - address: String
 
-### Borrow
+## Borrow
 
-## Data Model
+### Data Model
 
 - customerId: customerId from Customer
 - productId: ProductId from product
 - borrow: today's Date
 
-### Blog
+## Blog
 
-## Data Model
+### Data Model
 
 - title: String
 - description: String

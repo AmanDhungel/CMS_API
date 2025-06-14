@@ -9,7 +9,10 @@ import { connectDB } from "./lib/connectDB.js";
 import { verifyToken } from "./middleware/verifyToken.js";
 import { configDotenv } from "dotenv";
 import { webcrypto } from 'crypto';
+
+
 globalThis.crypto = webcrypto;
+client.connect();
 
 const app = express();
 app.use(express.json());
